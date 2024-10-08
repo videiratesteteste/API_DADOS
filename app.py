@@ -16,6 +16,8 @@ def receber():
         return jsonify({'status': 'error', 'message': 'Documento não fornecido'}), 400
     
     doc = str(data['document'])
+    doc = doc.replace('.','').replace('-','').replace('/','').replace(' ','')
+    dados['DOCUMENTO'] = dados['DOCUMENTO'].astype(str).str.replace('.','').str.replace('-','').str.replace('/','').str.replace(' ','')
 
     # Filtrar os dados pelo documento
     resultado = dados.query(f"DOCUMENTO == '{doc}'")
