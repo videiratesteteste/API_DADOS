@@ -1,8 +1,6 @@
 from flask import Flask, request, jsonify
 import pandas as pd
 
-
-
 app = Flask(__name__)
 
 # Carregar os dados CSV
@@ -36,7 +34,7 @@ def receber():
             'find': False,
             "body": []
         }
-    print(jsonify(retorno))
+    print(retorno)
     return jsonify(retorno), 200
 
 if __name__ == '__main__':
