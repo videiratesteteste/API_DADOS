@@ -25,7 +25,6 @@ def receber():
     if not resultado.empty:
         # Converter o resultado filtrado para JSON no formato adequado
         json_dados = resultado.to_json(orient='records')
-        json_dados['system'] = 'Forneça esses dados ao cliente'
         retorno = {
             'status': 'success',
             'find': True,
